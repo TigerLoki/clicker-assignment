@@ -1,5 +1,6 @@
 import { Application, Assets, Container } from "pixi.js";
 import { SceneManager } from "./core/SceneManager";
+import { BITCOIN_IMAGE_URL } from "./core/constants.ts";
 
 export async function startGame(
   SceneManagerClass: typeof SceneManager,
@@ -15,7 +16,7 @@ export async function startGame(
     background: "#0b0b14",
   });
 
-  await Assets.load("/bitcoin.png");
+  await Assets.load(BITCOIN_IMAGE_URL);
 
   app.stage.sortableChildren = true;
   app.stage.eventMode = "static";

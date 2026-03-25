@@ -1,5 +1,6 @@
 import { Container, Graphics, Sprite, Texture } from "pixi.js";
 import { EventBus } from "../patterns/EventBus";
+import { BITCOIN_IMAGE_URL } from "../core/constants.ts";
 
 const BASE_RADIUS = 125;
 const MAX_SCALE = 1.5;
@@ -31,7 +32,7 @@ export class CoinObject extends Container {
     this.glow = new Graphics();
     this.addChild(this.glow);
 
-    const texture = Texture.from("/bitcoin.png");
+    const texture = Texture.from(BITCOIN_IMAGE_URL);
     this.sprite = new Sprite(texture);
     this.sprite.anchor.set(0.5);
     this.sprite.eventMode = "static";
